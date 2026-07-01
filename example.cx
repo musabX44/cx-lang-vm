@@ -1,0 +1,14 @@
+use io;
+use math;
+
+fn add(a: i, b: i): i {
+    ret a + b;
+};
+
+fn main(): i {
+    x: i = 5;
+    y: i = 10;
+    z: i = add(x, y);
+    io.print(z);
+    ret 0;
+};

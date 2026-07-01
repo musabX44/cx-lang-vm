@@ -1,0 +1,20 @@
+# Build
+*.o
+*.a
+*.so
+cx-compiler
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output
+*.cxb
+*.out
