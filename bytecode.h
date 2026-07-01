@@ -123,12 +123,16 @@ typedef struct {
 } VM;
 
 /* Function prototypes */
-ByteCodeModule *bytecode_module_create(void);
+BytecodeModule *bytecode_module_create(void);
 void bytecode_module_free(BytecodeModule *module);
 void bytecode_emit(BytecodeModule *module, Opcode op, int64_t arg1, int64_t arg2);
 void bytecode_emit_str(BytecodeModule *module, Opcode op, const char *str);
 int bytecode_add_string(BytecodeModule *module, const char *str);
 int bytecode_add_function(BytecodeModule *module, const char *name, int64_t offset);
+
+/* Bytecode generation from AST */
+typedef struct ASTNode ASTNode;  /* Forward declaration */
+void generate_bytecode(BytecodeModule *module, ASTNode *ast);
 
 VM *vm_create(BytecodeModule *module);
 void vm_free(VM *vm);
